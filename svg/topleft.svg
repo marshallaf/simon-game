@@ -1,0 +1,6 @@
+<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg"> 
+  <path d="M 50 0 
+  		   A 50 50 0 0 0 0 50
+  		   L 30 50
+  		   A 20 20 0 0 1 50 30 Z" fill="green"/>
+</svg>

@@ -1,11 +1,11 @@
 
-
 $(document).ready(function() {
 
 	gameModule.initializeAudio();
 
 	$('.button-strict').on('click', function() {
 		$(this).toggleClass('stricton');
+		gameModule.toggleStrict();
 	});
 
 	$('.svgbase').on('mousedown', function(e) {
@@ -25,6 +25,8 @@ var gameModule = (function () {
 	// array of audio for button presses
 	var btnAudio = [];
 
+	var strictOn = false;
+
 	return {
 	 	
 	 	// add audio elements to document and array
@@ -35,10 +37,15 @@ var gameModule = (function () {
 		    	btnAudio.push(aud);
 		    }
 	    },
-	 
+	    
+	    // light up button and play audio
 	    buttonAction: function(id) {
 		    $('#button-'+id).toggleClass('clicked');
 		    btnAudio[id].play();
+	    },
+
+	    toggleStrict: function() {
+	    	strictOn = !strictOn;
 	    }
 	};
 })();

@@ -87,9 +87,31 @@ body {
 	background-color: blue;
 }
 
-.svgtopleft {
+.svgbase {
 	position: absolute;
+	width: 50%;
+	height: 50%;
+}
+.svgbase path {
+	transform: scale(4);
+}
+
+.svgtopleft {
 	top: 0;
 	left: 0;
-	width: 50%;
+}
+
+.svgtopright {
+	top: 0;
+	right: 0;
+}
+
+.svgbottomleft {
+	bottom: 0;
+	left: 0;
+}
+
+.svgbottomright {
+	bottom: 0;
+	right: 0;
 }

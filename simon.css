@@ -53,40 +53,6 @@ body {
 	position: relative;
 }
 
-.qcircle {
-	width: 50%;
-	height: 50%;
-	position: absolute;
-}
-
-.topleft {
-	top: 0;
-	left: 0;
-	border-radius: 100% 0 0 0;
-	background-color: green;
-}
-
-.topright {
-	top: 0;
-	right: 0;
-	border-radius: 0 100% 0 0;
-	background-color: red;
-}
-
-.bottomleft {
-	bottom: 0;
-	left: 0;
-	border-radius: 0 0 0 100%;
-	background-color: yellow;
-}
-
-.bottomright {
-	bottom: 0;
-	right: 0;
-	border-radius: 0 0 100% 0;
-	background-color: blue;
-}
-
 .svgbase {
 	position: absolute;
 	width: 50%;
@@ -114,4 +80,19 @@ body {
 .svgbottomright {
 	bottom: 0;
 	right: 0;
+}
+
+.svgbase path:hover {
+	fill: pink;
+}
+
+/* style for control area */
+.controlarea {
+	border-radius: 50%;
+	background-color: #ffffcc;
+	position: absolute;
+	width: 240px;
+	height: 240px;
+	top: 80px;
+	left: 80px;
 }

@@ -45,3 +45,44 @@ body {
 	padding: 15px;
 }
 
+/* style for colored circle */
+
+.circle-container {
+	width: 400px;
+	height: 400px;
+	position: relative;
+}
+
+.qcircle {
+	width: 50%;
+	height: 50%;
+	position: absolute;
+}
+
+.topleft {
+	top: 0;
+	left: 0;
+	border-radius: 100% 0 0 0;
+	background-color: green;
+}
+
+.topright {
+	top: 0;
+	right: 0;
+	border-radius: 0 100% 0 0;
+	background-color: red;
+}
+
+.bottomleft {
+	bottom: 0;
+	left: 0;
+	border-radius: 0 0 0 100%;
+	background-color: yellow;
+}
+
+.bottomright {
+	bottom: 0;
+	right: 0;
+	border-radius: 0 0 100% 0;
+	background-color: blue;
+}

@@ -12,8 +12,6 @@ $(document).ready(function() {
 		e.preventDefault();
 		var buttonId = parseInt(this.id[7]);
 		gameModule.buttonAction(buttonId);
-	}).on('mouseup', function() {
-		$(this).toggleClass('clicked');
 	});
 
 });
@@ -26,6 +24,7 @@ var gameModule = (function () {
 	var btnAudio = [];
 
 	var strictOn = false;
+	var acceptingUser = false;
 
 	return {
 	 	
@@ -42,8 +41,11 @@ var gameModule = (function () {
 	    buttonAction: function(id) {
 		    $('#button-'+id).toggleClass('clicked');
 		    btnAudio[id].play();
+		    setTimeout(function() {
+		    	$('#button-'+id).toggleClass('clicked');}, 300);
 	    },
 
+	    // turn strict mode on or off
 	    toggleStrict: function() {
 	    	strictOn = !strictOn;
 	    }

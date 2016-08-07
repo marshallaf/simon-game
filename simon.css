@@ -73,56 +73,56 @@ body {
 }
 
 /* top left button */
-#button-1 {
+#button-0 {
 	top: 10px;
 	left: 10px;
 	fill: #5ddc6b;
 }
-#button-1:hover {
+#button-0:hover {
 	fill: #48c956;
 }
-/*#button-1:clicked {
+#button-0.clicked {
 	fill: #76f983;
-}*/
+}
 
 /* top right button */
-#button-2 {
+#button-1 {
 	top: 10px;
 	right: 10px;
 	fill: #f5361a;
 }
-#button-2:hover {
+#button-1:hover {
 	fill: #dc2004;
 }
-/*#button-2:clicked {
+#button-1.clicked {
 	fill: #fe7e6c;
-}*/
+}
 
 /* bottom left button */
-#button-3 {
+#button-2 {
 	bottom: 10px;
 	left: 10px;
 	fill: #fffa34;
 }
-#button-3:hover {
+#button-2:hover {
 	fill: #e4df17;
 }
-/*#button-3:clicked {
+#button-2.clicked {
 	fill: #fcf988;
-}*/
+}
 
 /* bottom right button */
-#button-4 {
+#button-3 {
 	bottom: 10px;
 	right: 10px;
 	fill: #019eed;
 }
-#button-4:hover {
+#button-3:hover {
 	fill: #0288cb;
 }
-/*#button-4:clicked {
+#button-3.clicked {
 	fill: #32b7fa;
-}*/
+}
 
 /* style for control area */
 .controlarea {

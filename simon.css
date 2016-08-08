@@ -209,4 +209,9 @@ body {
 	background-color: #e6e600;
 }
 
-
+.credits {
+  color: grey;
+  font-size: .7em;
+  text-align: center;
+  margin-top: 15px;
+}

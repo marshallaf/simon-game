@@ -44,7 +44,6 @@ var gameModule = (function () {
 		if (moveList.length > 9) count += moveList.length;
 		else count += '0' + moveList.length;
 		$('#counter').html(count);
-		console.log(moveList);
 
 		lightSequence(moveList);
 	}
@@ -115,17 +114,18 @@ var gameModule = (function () {
 	return {
 	 	// add audio elements to document and array
 	    initializeAudio: function() {
+	    	var aud;
 		    for (var i = 0; i < 4; i++) {
-		    	var aud = document.createElement('audio');
+		    	aud = document.createElement('audio');
 		    	aud.setAttribute('src', 'https://s3.amazonaws.com/freecodecamp/simonSound'+(i+1)+'.mp3');
 		    	btnAudio.push(aud);
 		    }
-		    var error = document.createElement('audio');
-		    error.setAttribute('src', 'http://soundbible.com/mp3/Fuzzy Beep-SoundBible.com-1580329899.mp3');
-		    btnAudio.push(error);
-		    var win = document.createElement('audio');
-		    win.setAttribute('src', 'http://soundbible.com/mp3/Ta Da-SoundBible.com-1884170640.mp3');
-		    btnAudio.push(win);
+		    aud = document.createElement('audio');
+		    aud.setAttribute('src', 'http://soundbible.com/mp3/Fuzzy Beep-SoundBible.com-1580329899.mp3');
+		    btnAudio.push(aud);
+		    aud = document.createElement('audio');
+		    aud.setAttribute('src', 'http://soundbible.com/mp3/Ta Da-SoundBible.com-1884170640.mp3');
+		    btnAudio.push(aud);
 	    },
 	    
 	    // turn strict mode on or off
@@ -148,32 +148,33 @@ var gameModule = (function () {
 	    // checks user input for correctness
 	    checkUser: function(id) {
 	    	if (id == moveList[currMove]) {
+	    		// play the right noise
 	    		buttonAction(id, true);
-	    		console.log("yes, correct");
 	    		if (currMove == moveList.length-1) {
 	    			if (moveList.length == winNumber) {
-	    				console.log("Great job! You win!");
+	    				// the player has won
 	    				winAnimation();
 	    			} else {
-		    			console.log("sequence complete! here's the next move");
+		    			// the player has completed this round
 		    			currMove = 0;
 		    			setTimeout(function() {
 		    				pickNext();
 		    			}, 800);
 		    		}
 	    		} else {
-	    			console.log("next move please");
+	    			// the player correctly chose this move
 	    			currMove++;
 	    		}
 	    	} else {
+	    		// play the error noise
 	    		buttonAction(id, false);
 	    		if (strictOn) {
-		    		console.log("wrong, new game starting...");
+		    		// wrong choice, game starts over
 		    		setTimeout(function() {
 		    			gameModule.newGame();
 		    		}, 1400);
 		    	} else {
-		    		console.log("wrong, watch closely");
+		    		// wrong choice, show sequence again
 		    		currMove = 0;
 		    		setTimeout(function() {
 		    			lightSequence(moveList);

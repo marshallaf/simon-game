@@ -78,7 +78,7 @@ body {
 	left: 10px;
 	fill: #5ddc6b;
 }
-#button-0:hover {
+#button-0 path:hover {
 	fill: #48c956;
 }
 #button-0.clicked {
@@ -91,7 +91,7 @@ body {
 	right: 10px;
 	fill: #f5361a;
 }
-#button-1:hover {
+#button-1 path:hover {
 	fill: #dc2004;
 }
 #button-1.clicked {
@@ -104,7 +104,7 @@ body {
 	left: 10px;
 	fill: #fffa34;
 }
-#button-2:hover {
+#button-2 path:hover {
 	fill: #e4df17;
 }
 #button-2.clicked {
@@ -117,7 +117,7 @@ body {
 	right: 10px;
 	fill: #019eed;
 }
-#button-3:hover {
+#button-3 path:hover {
 	fill: #0288cb;
 }
 #button-3.clicked {

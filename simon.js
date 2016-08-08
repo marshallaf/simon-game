@@ -73,14 +73,17 @@ var gameModule = (function () {
     function buttonAction(id, sound) {
 	    $('#button-'+id).toggleClass('clicked');
 
-	    if (sound) btnAudio[id].play();
-	    else btnAudio[4].play();
+	    if (sound) {
+	    	if (btnAudio[id].paused) btnAudio[id].play();
+	    	else btnAudio[id+4].play();
+	    }
+	    else btnAudio[8].play();
 
 	    setTimeout(function() {
 	    	btnAudio[id].pause();
 	    	btnAudio[id].currentTime = 0;
-	    	btnAudio[4].pause();
-	    	btnAudio[4].currentTime = 0;
+	    	btnAudio[8].pause();
+	    	btnAudio[8].currentTime = 0;
 	    	$('#button-'+id).toggleClass('clicked');
 	    }, 400);
     }
@@ -92,7 +95,7 @@ var gameModule = (function () {
 		var steps = 20;
 		var speed = 150;
 
-		btnAudio[5].play();
+		btnAudio[9].play();
 
 		function step() {
 			if (currSteps == steps) {
@@ -115,11 +118,14 @@ var gameModule = (function () {
 	 	// add audio elements to document and array
 	    initializeAudio: function() {
 	    	var aud;
-		    for (var i = 0; i < 4; i++) {
-		    	aud = document.createElement('audio');
-		    	aud.setAttribute('src', 'https://s3.amazonaws.com/freecodecamp/simonSound'+(i+1)+'.mp3');
-		    	btnAudio.push(aud);
-		    }
+	    	for (var j = 0; j < 2; j++) {
+			    for (var i = 0; i < 4; i++) {
+			    	aud = document.createElement('audio');
+			    	aud.setAttribute('src', 'https://s3.amazonaws.com/freecodecamp/simonSound'+(i+1)+'.mp3');
+			    	btnAudio.push(aud);
+			    }
+			}
+
 		    aud = document.createElement('audio');
 		    aud.setAttribute('src', 'http://soundbible.com/mp3/Fuzzy Beep-SoundBible.com-1580329899.mp3');
 		    btnAudio.push(aud);
